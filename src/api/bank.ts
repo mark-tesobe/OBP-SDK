@@ -19,11 +19,11 @@ import { API, APIRequest, APIClientConfig } from "./client";
 //  Banks: Array<Bank>;
 //}
 
-export const banks: APIRequest<API.Bank> = {
+export const bank: APIRequest<API.Bank> = {
   get: async (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<any>
   ): Promise<API.Bank> => {
-    return methodCall(config, "banks");
+    return await methodCall(config, "banks");
   },
 };

@@ -11,6 +11,7 @@ export enum API {
   Account,
   Payment,
   Transaction,
+  User,
 }
 
 export type APIClientConfig = {
@@ -20,41 +21,46 @@ export type APIClientConfig = {
   token?: string;
 };
 
+export type MethodCall<T> = (
+  config: APIClientConfig,
+  path: string,
+  body?: any
+) => Promise<T>;
+
 export type APIRequest<T> = {
-  get: (
-    config: APIClientConfig,
-    methodCall: (config: APIClientConfig, path: string) => Promise<T>
-  ) => any;
+  get?: (config: APIClientConfig, methodCall: MethodCall<T>) => any;
+  create?: (config: APIClientConfig, methodCall: MethodCall<T>) => any;
 };
+
+export type RequestParameter<T> = (
+  config: APIClientConfig,
+  methodCall: MethodCall<T>
+) => T;
 
 const uri = (config: APIClientConfig, path: string): string => {
   const base = config.baseUri;
   const version = config.version;
-  if (path.startsWith("/")){
+  if (path.startsWith("/")) {
     return `${base}/obp/${version}${path}`;
-  }else{
+  } else {
     return `${base}/obp/${version}/${path}`;
   }
 };
 
 export const apiCallWithCustomURIPath =
-  <T>(
-    config: APIClientConfig,
-    methodCall: (config: APIClientConfig, path: string) => Promise<T>
-  ) =>
-  (
-    path:
-      | string
-      | ((
-          config: APIClientConfig,
-          methodCall: (config: APIClientConfig, path: string) => Promise<T>
-        ) => T
-  ) => {
+  <T>(config: APIClientConfig, methodCall: MethodCall<T>) =>
+  (path: string | RequestParameter<T>) => {
     if (typeof path === "string") {
       return methodCall(config, path.toString());
     } else {
       return path(config, methodCall);
     }
+  };
+
+export const apiCallWithCustomBody =
+  <T, E>(config: APIClientConfig, path: string, methodCall: MethodCall<T>) =>
+  (body: E) => {
+    return methodCall(config, path, body);
   };
 
 const getDirectLoginToken = async (
@@ -90,9 +96,35 @@ export const getRequest = async (
   );
 };
 
+export const postRequest = async (
+  config: APIClientConfig,
+  path: string,
+  body: any
+): Promise<any> => {
+  const pathUri = uri(config, path);
+  if (!config.token) {
+    config.token = await getDirectLoginToken(config);
+  }
+  return JSON.parse(
+    (
+      await superagent
+        .post(pathUri)
+        .set("Authorization", config.token)
+        .send(body)
+    ).text
+  );
+};
+
 export const get = <T>(
   config: APIClientConfig,
   request: APIRequest<T>
 ): any => {
   return request.get(config, getRequest);
+};
+
+export const create = <T>(
+  config: APIClientConfig,
+  request: APIRequest<T>
+): any => {
+  return request.create(config, postRequest);
 };

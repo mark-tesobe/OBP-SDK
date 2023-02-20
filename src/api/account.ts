@@ -8,17 +8,17 @@ import {
 export const GetAccountsByBankId =
   (
     config: APIClientConfig,
-    methodCall: (config: APIClientConfig, path: string) => Promise<any>
+    methodCall: (config: APIClientConfig, path: string) => Promise<API.Account>
   ) =>
   async (id: string): Promise<API.Account> => {
     const path = `/banks/${id}/accounts`;
     return await methodCall(config, path);
   };
 
-export const accounts: APIRequest<API.Account> = {
+export const account: APIRequest<API.Account> = {
   get: (
     config: APIClientConfig,
-    methodCall: (config: APIClientConfig, path: string) => Promise<any>
+    methodCall: (config: APIClientConfig, path: string) => Promise<API.Account>
   ) => {
     return apiCallWithCustomURIPath<API.Account>(config, methodCall);
   },

@@ -1,5 +1,5 @@
-import { describe, test } from "@jest/globals";
-import { API, Version, APIClientConfig, get, Accounts } from "../src";
+import { describe, test, expect } from "@jest/globals";
+import { API, Version, APIClientConfig, get, Account } from "../src";
 import { GetAccountsByBankId } from "../src/api/account";
 import { getRequest, apiCallWithCustomURIPath } from "../src/api/client";
 
@@ -13,22 +13,28 @@ describe("Account", () => {
   test("get<API.Account> ByBankId should be able to get the OBP Accounts data.", async () => {
     const accounts = await get<API.Account>(
       clientConfig,
-      Accounts
+      Account
     )(GetAccountsByBankId)("rbs");
+
+    expect(accounts).toBeDefined();
   });
 
   test("get<API.Account> should be able to get the OBP Accounts data.", async () => {
     const accounts = await get<API.Account>(
       clientConfig,
-      Accounts
+      Account
     )("/banks/rbs/accounts");
+
+    expect(accounts).toBeDefined();
   });
 
   test("apiCallWithCustomURIPath should be able to get the OBP Accounts data.", async () => {
-    const customPathCall = await apiCallWithCustomURIPath(
+    const customPathCall = await apiCallWithCustomURIPath<API.Account>(
       clientConfig,
       getRequest
     );
     const accounts = await customPathCall("/banks/rbs/accounts");
+
+    expect(accounts).toBeDefined();
   });
 });

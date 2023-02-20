@@ -1,5 +1,11 @@
 import "dotenv/config";
-export { banks as Banks } from "./api/Bank";
-export { accounts as Accounts } from "./api/Account";
-export { transactions as Transactions } from "./api/Transaction";
-export { API, Version, APIClientConfig, get } from "./api/client";
+export { bank as Bank } from "./api/bank";
+export { account as Account } from "./api/account";
+export {
+  transaction as Transaction,
+  TransactionRequestAccountBody,
+  GetTransactionForAccountFull,
+  CreateTransactionRequestAccount,
+} from "./api/transaction";
+export { user as User, Current } from "./api/user";
+export { API, Version, APIClientConfig, get, create } from "./api/client";
