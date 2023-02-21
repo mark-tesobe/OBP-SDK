@@ -4,7 +4,7 @@ export { account as Account } from "./api/account";
 export {
   transaction as Transaction,
   TransactionRequestAccountBody,
-  GetTransactionForAccountFull,
+  GetTransactionsForAccountFull,
   CreateTransactionRequestAccount,
 } from "./api/transaction";
 export { user as User, Current } from "./api/user";

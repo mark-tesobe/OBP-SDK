@@ -45,11 +45,11 @@ describe("Transaction", () => {
     const body: TransactionRequestAccountBody = {
       description: "test transaction full data",
       to: {
-        bank_id: "",
-        account_id: "41b8c9f2-7748-40ee-ac32-4ffd2e834914",
+        bank_id: bankId,
+        account_id: accountId,
       },
       value: {
-        currency: "",
+        currency: "EUR",
         amount: 1.0,
       },
     };
