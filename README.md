@@ -19,7 +19,7 @@ To link the **obp-sdk-ts** library inoto your app.
 
 #### Example
 
-```
+```typescript
 import {
   API,
   APIClientConfig,
