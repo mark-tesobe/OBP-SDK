@@ -1,12 +1,25 @@
 import { describe, test, expect } from "@jest/globals";
-import { API, Version, APIClientConfig, get, Account } from "../src";
+import {
+  API,
+  Version,
+  APIClientConfig,
+  DirectLoginAuthentication,
+  get,
+  Account,
+} from "../src";
 import { GetAccountsByBankId } from "../src/api/account";
 import { getRequest, apiCallWithCustomURIPath } from "../src/api/client";
+
+const directLogin: DirectLoginAuthentication = {
+  username: process.env.OBP_USERNAME || "",
+  password: process.env.OBP_PASSWORD || "",
+  consumerKey: process.env.OBP_CONSUMER_KEY || "",
+};
 
 const clientConfig: APIClientConfig = {
   baseUri: "https://apisandbox.openbankproject.com",
   version: Version.v500,
-  directLogin: process.env.DIRECT_LOGIN || "",
+  authentication: directLogin,
 };
 
 describe("Account", () => {
@@ -29,7 +42,7 @@ describe("Account", () => {
   });
 
   test("apiCallWithCustomURIPath should be able to get the OBP Accounts data.", async () => {
-    const customPathCall = await apiCallWithCustomURIPath<API.Account>(
+    const customPathCall = apiCallWithCustomURIPath<API.Account>(
       clientConfig,
       getRequest
     );

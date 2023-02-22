@@ -14,12 +14,25 @@ export enum API {
   User,
 }
 
+export type DirectLoginAuthentication = {
+  username: string;
+  password: string;
+  consumerKey: string;
+};
+
 export type APIClientConfig = {
   baseUri: string;
   version: Version;
-  directLogin?: string;
+  authentication: DirectLoginAuthentication;
   token?: string;
 };
+
+//export type APIClientConfig = {
+//  baseUri: string;
+//  version: Version;
+//  directLogin?: string;
+//  token?: string;
+//};
 
 export type MethodCall<T> = (
   config: APIClientConfig,
@@ -66,12 +79,15 @@ export const apiCallWithCustomBody =
 const getDirectLoginToken = async (
   config: APIClientConfig
 ): Promise<string> => {
-  if (!config.directLogin) {
-    console.warn("DirectLogin is not set.");
+  if (!config.authentication) {
+    console.warn("Authentication is not set.");
     return "";
   }
   const loginUri = config.baseUri + "/my/logins/direct";
-  const directLogin = "DirectLogin " + config.directLogin;
+  const username = config.authentication.username;
+  const password = config.authentication.password;
+  const consumerKey = config.authentication.consumerKey;
+  const directLogin = `DirectLogin username=${username},password=${password},consumer_key=${consumerKey}`;
   const response = JSON.parse(
     (
       await superagent

@@ -1,15 +1,27 @@
 import { describe, test, expect } from "@jest/globals";
-import { API, APIClientConfig, Version, get, User, Current } from "../src/api";
+import {
+  API,
+  APIClientConfig,
+  DirectLoginAuthentication,
+  Version,
+  get,
+  User,
+  Current,
+} from "../src/api";
 
 describe("User", () => {
   test("get<API.User> Current should be able to get the Current User.", async () => {
+    const directLogin: DirectLoginAuthentication = {
+      username: process.env.OBP_USERNAME || "",
+      password: process.env.OBP_PASSWORD || "",
+      consumerKey: process.env.OBP_CONSUMER_KEY || "",
+    };
     const clientConfig: APIClientConfig = {
       baseUri: "https://apisandbox.openbankproject.com",
       version: Version.v500,
-      directLogin: process.env.DIRECT_LOGIN || "",
+      authentication: directLogin,
     };
     const users = await get<API.User>(clientConfig, User)(Current);
     expect(users).toBeDefined();
-    console.log(JSON.stringify(users));
   });
 });

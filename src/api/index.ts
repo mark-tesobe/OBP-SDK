@@ -8,4 +8,11 @@ export {
   CreateTransactionRequestAccount,
 } from "./transaction";
 export { user as User, Current } from "./user";
-export { API, Version, APIClientConfig, get, create } from "./client";
+export {
+  API,
+  Version,
+  APIClientConfig,
+  DirectLoginAuthentication,
+  get,
+  create,
+} from "./client";

@@ -3,6 +3,7 @@ import {
   API,
   Version,
   APIClientConfig,
+  DirectLoginAuthentication,
   create,
   get,
   Transaction,
@@ -13,10 +14,15 @@ import {
   TransactionRequestAccountBody,
 } from "../src/api/transaction";
 
+const directLogin: DirectLoginAuthentication = {
+  username: process.env.OBP_USERNAME || "",
+  password: process.env.OBP_PASSWORD || "",
+  consumerKey: process.env.OBP_CONSUMER_KEY || "",
+};
 const clientConfig: APIClientConfig = {
   baseUri: "https://apisandbox.openbankproject.com",
   version: Version.v500,
-  directLogin: process.env.DIRECT_LOGIN || "",
+  authentication: directLogin,
 };
 const bankId = "rbs";
 const accountId = "41b8c9f2-7748-40ee-ac32-4ffd2e834914";
