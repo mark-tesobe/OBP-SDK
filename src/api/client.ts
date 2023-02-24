@@ -1,11 +1,21 @@
 import superagent from "superagent";
 
+/**
+ * OBP API Versions.
+ *
+ * @public
+ */
 export enum Version {
   v500 = "v5.0.0",
   v510 = "v5.1.0",
   v400 = "v4.0.0",
 }
 
+/**
+ * Types of OBP API.
+ *
+ * @public
+ */
 export enum API {
   Bank,
   Account,
@@ -14,12 +24,35 @@ export enum API {
   User,
 }
 
+/**
+ * Alias for DirectLogin properties.
+ *
+ * @prop {string} username
+ * @prop {string} passowrd
+ * @prop {string} consumerKey
+ *
+ * @public
+ */
 export type DirectLoginAuthentication = {
   username: string;
   password: string;
   consumerKey: string;
 };
 
+/**
+ * Alias for APIClientConfig properties.
+ * @type {Object}
+ *
+ * @prop {string} baseUri
+ * @prop {Version} version
+ * @prop {DirectLoginAuthentication} authentication
+ * @prop {string} [token]
+ *
+ * @see Version
+ * @see DirectLoginAuthentication
+ *
+ * @public
+ */
 export type APIClientConfig = {
   baseUri: string;
   version: Version;
@@ -27,29 +60,70 @@ export type APIClientConfig = {
   token?: string;
 };
 
-//export type APIClientConfig = {
-//  baseUri: string;
-//  version: Version;
-//  directLogin?: string;
-//  token?: string;
-//};
-
+/**
+ * Alias for HTTP MethodCall properties.
+ * @type {Object}
+ * @typeParam T - Type of object
+ *
+ * @prop {APIClientConfig} config
+ * @prop {string} path
+ * @prop {any} [body]
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export type MethodCall<T> = (
   config: APIClientConfig,
   path: string,
   body?: any
 ) => Promise<T>;
 
+/**
+ * Alias for APIRequest properties.
+ * @type {Object}
+ * @typeParam T - Type of object
+ *
+ * @prop {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [get]
+ * @prop {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [create]
+ *
+ * @see APIClientConfig
+ * @see MethodCall
+ *
+ * @public
+ */
 export type APIRequest<T> = {
   get?: (config: APIClientConfig, methodCall: MethodCall<T>) => any;
   create?: (config: APIClientConfig, methodCall: MethodCall<T>) => any;
 };
 
+/**
+ * Alias for RequestParameter properties.
+ * @type {Object}
+ * @typeParam T - Type of object
+ *
+ * @prop {APIClientConfig} config
+ * @prop {MethodCall<T>} methodCall
+ *
+ * @see APIClientConfig
+ * @see MethodCall<T>
+ *
+ * @public
+ */
 export type RequestParameter<T> = (
   config: APIClientConfig,
   methodCall: MethodCall<T>
 ) => T;
 
+/**
+ * Returns the absolute URI path.
+ *
+ * @param config - The APIClientConfig object
+ * @param path - The relative path
+ * @returns The absolute URI
+ *
+ * @public
+ */
 const uri = (config: APIClientConfig, path: string): string => {
   const base = config.baseUri;
   const version = config.version;
@@ -60,6 +134,20 @@ const uri = (config: APIClientConfig, path: string): string => {
   }
 };
 
+/**
+ * Returns an anonymous function.
+ * @typeParam T - Type of API
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall<T> - The HTTP method function
+ * @returns A curried function
+ *
+ * @see API
+ * @see APIClientConfig
+ * @see MethodCall<T>
+ *
+ * @public
+ */
 export const apiCallWithCustomURIPath =
   <T>(config: APIClientConfig, methodCall: MethodCall<T>) =>
   (path: string | RequestParameter<T>) => {
@@ -70,12 +158,38 @@ export const apiCallWithCustomURIPath =
     }
   };
 
+/**
+ * Returns an anonymous function.
+ * @typeParam T - Type of API
+ * @typeParam E - The response type
+ *
+ * @param config - The APIClientConfig object
+ * @param path - The URI path
+ * @param methodCall<T> - The HTTP method function
+ * @returns A curried function
+ *
+ * @see API
+ * @see APIClientConfig
+ * @see MethodCall<T>
+ *
+ * @public
+ */
 export const apiCallWithCustomBody =
   <T, E>(config: APIClientConfig, path: string, methodCall: MethodCall<T>) =>
   (body: E) => {
     return methodCall(config, path, body);
   };
 
+/**
+ * Returns the Authorization DirectLogin header value.
+ *
+ * @param config - The APIClientConfig object
+ * @returns A {string} value
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 const getDirectLoginToken = async (
   config: APIClientConfig
 ): Promise<string> => {
@@ -99,6 +213,16 @@ const getDirectLoginToken = async (
   return "DirectLogin token=" + response.token;
 };
 
+/**
+ * Send a GET request and returns a response.
+ *
+ * @param config - The APIClientConfig object
+ * @returns An {object} value
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export const getRequest = async (
   config: APIClientConfig,
   path: string
@@ -112,6 +236,18 @@ export const getRequest = async (
   );
 };
 
+/**
+ * Send a POST request and returns a response.
+ *
+ * @param config - The APIClientConfig object
+ * @param path - The URI path
+ * @param body - The request body
+ * @returns An {object} value
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export const postRequest = async (
   config: APIClientConfig,
   path: string,
@@ -131,6 +267,18 @@ export const postRequest = async (
   );
 };
 
+/**
+ * A GET request function that returns the API data.
+ *
+ * @param config - The APIClientConfig object
+ * @param request - The APIRequest object
+ * @returns An {object} value
+ *
+ * @see APIClientConfig
+ * @see APIRequest<T>
+ *
+ * @public
+ */
 export const get = <T>(
   config: APIClientConfig,
   request: APIRequest<T>
@@ -138,6 +286,18 @@ export const get = <T>(
   return request.get(config, getRequest);
 };
 
+/**
+ * A POST request function that creates an API data and returns the result.
+ *
+ * @param config - The APIClientConfig object
+ * @param request - The APIRequest object
+ * @returns An {object} value
+ *
+ * @see APIClientConfig
+ * @see APIRequest<T>
+ *
+ * @public
+ */
 export const create = <T>(
   config: APIClientConfig,
   request: APIRequest<T>

@@ -32,7 +32,7 @@ import {
   Transaction,
   GetTransactionsForAccountFull,
   TransactionRequestAccountBody,
-  CreateTransactionRequestAccount
+  CreateTransactionRequestAccount,
 } from "obp-sdk-ts/src";
 
 (async () => {
@@ -49,12 +49,11 @@ import {
   const banks = await get<API.Bank>(clientConfig, Bank);
   const account = await get<API.Account>(clientConfig, Account);
 
-  const transactionFn = get<API.Transaction>(
-    clientConfig,
-    Transaction
-  );
+  const transactionFn = get<API.Transaction>(clientConfig, Transaction);
   // Get transaction for account full.
-  const transactionsForAccountFull = await transactionFn(GetTransactionsForAccountFull)("bankId", "accountId", "viewId");
+  const transactionsForAccountFull = await transactionFn(
+    GetTransactionsForAccountFull
+  )("bankId", "accountId", "viewId");
 
   // New transaction body.
   const body: TransactionRequestAccountBody = {

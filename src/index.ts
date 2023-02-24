@@ -1,5 +1,5 @@
 import "dotenv/config";
-export { bank as Bank } from "./api/bank";
+export { bank as Bank, GetBanks, GetBanksById } from "./api/bank";
 export { account as Account } from "./api/account";
 export {
   transaction as Transaction,

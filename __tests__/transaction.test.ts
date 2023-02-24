@@ -25,7 +25,7 @@ const clientConfig: APIClientConfig = {
   authentication: directLogin,
 };
 const bankId = "rbs";
-const accountId = "41b8c9f2-7748-40ee-ac32-4ffd2e834914";
+const accountId = "9e6b2f45-a449-4e87-b772-e74cc9d42448";
 const viewId = "owner";
 
 describe("Transaction", () => {
@@ -65,7 +65,8 @@ describe("Transaction", () => {
     )(CreateTransactionRequestAccount)(
       bankId,
       accountId,
-      viewId
+      viewId,
+      "SANDBOX_TAN"
     )(body);
 
     expect(transactions).toBeDefined();

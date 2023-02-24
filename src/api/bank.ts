@@ -1,29 +1,61 @@
-import { API, APIRequest, APIClientConfig } from "./client";
+import {
+  API,
+  APIRequest,
+  APIClientConfig,
+  apiCallWithCustomURIPath,
+} from "./client";
 
-//export class BankRouting {
-//  scheme: string;
-//  address: string;
-//}
-//
-//export class Bank {
-//  id: string;
-//  short_name: string;
-//  full_nae: string;
-//  logo: string;
-//  website: string;
-//  Bank_routing: Array<BankRouting>;
-//  attribute: Array<string>;
-//}
-//
-//export class BankData {
-//  Banks: Array<Bank>;
-//}
-
-export const bank: APIRequest<API.Bank> = {
-  get: async (
+/**
+ * Get banks on this API instance.
+ * Returns a list of banks.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A curried function
+ *
+ * @public
+ */
+export const GetBanksById =
+  (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<any>
-  ): Promise<API.Bank> => {
-    return await methodCall(config, "banks");
+  ) =>
+  async (id: string): Promise<API.Account> => {
+    const path = `/banks/${id}`;
+    return await methodCall(config, path);
+  };
+
+/**
+ * Get the bank specified by BANK_ID.
+ * Returns information about a single bank specified by BANK_ID.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A curried function
+ *
+ * @public
+ */
+export const GetBanks = async (
+  config: APIClientConfig,
+  methodCall: (config: APIClientConfig, path: string) => Promise<any>
+) => {
+  return await methodCall(config, "banks");
+};
+
+/**
+ * Returns an anonymous function for creating or getting Bank data.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A higher order function
+ *
+ * @public
+ */
+export const bank: APIRequest<API.Bank> = {
+  get: (
+    config: APIClientConfig,
+    methodCall: (config: APIClientConfig, path: string) => Promise<any>
+  ) => {
+    return apiCallWithCustomURIPath<API.Bank>(config, methodCall);
   },
 };
