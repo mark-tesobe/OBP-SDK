@@ -6,6 +6,15 @@ import {
   apiCallWithCustomBody,
 } from "./client";
 
+/**
+ * Alias for TransactionRequestAccountBody properties.
+ *
+ * @Property {string} description
+ * @Property {{bank_id: string, account_id: string}} to
+ * @Property {{curreny: string} value
+ *
+ * @public
+ */
 export type TransactionRequestAccountBody = {
   description: string;
   to: {
@@ -18,6 +27,18 @@ export type TransactionRequestAccountBody = {
   };
 };
 
+/**
+ * Get Transactions for Account (Full).
+ * Returns transactions list of the account specified by ACCOUNT_ID and moderated by the view (VIEW_ID).
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A curried function
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export const GetTransactionsForAccountFull =
   (
     config: APIClientConfig,
@@ -32,6 +53,17 @@ export const GetTransactionsForAccountFull =
     return await methodCall(config, path);
   };
 
+/**
+ * Create Transaction Request (ACCOUNT).
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A curried function
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export const CreateTransactionRequestAccount =
   (
     config: APIClientConfig,
@@ -49,7 +81,19 @@ export const CreateTransactionRequestAccount =
     >(config, path, methodCall);
   };
 
-export const transaction: APIRequest<API.Transaction> = {
+/**
+ * Returns an anonymous function for creating or getting Transaction data.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A higher order function
+ *
+ * @see APIClientConfig
+ * @see {@link APIRequest}
+ *
+ * @public
+ */
+export const Transaction: APIRequest<API.Transaction> = {
   get: (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<any>

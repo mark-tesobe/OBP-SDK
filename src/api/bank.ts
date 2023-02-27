@@ -49,9 +49,12 @@ export const GetBanks = async (
  * @param methodCall - A higher order function
  * @returns A higher order function
  *
+ * @see APIClientConfig
+ * @see {@link APIRequest}
+ *
  * @public
  */
-export const bank: APIRequest<API.Bank> = {
+export const Bank: APIRequest<API.Bank> = {
   get: (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<any>

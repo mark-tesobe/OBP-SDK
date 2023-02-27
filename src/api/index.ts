@@ -1,16 +1,18 @@
 import "dotenv/config";
-export { bank as Bank, GetBanks, GetBanksById } from "./bank";
-export { account as Account } from "./account";
+export { Bank, GetBanks, GetBanksById } from "./bank";
+export { Account } from "./account";
 export {
-  transaction as Transaction,
+  Transaction,
   TransactionRequestAccountBody,
   GetTransactionsForAccountFull,
   CreateTransactionRequestAccount,
 } from "./transaction";
-export { user as User, Current } from "./user";
+export { User, Current } from "./user";
 export {
   API,
   Version,
+  APIRequest,
+  MethodCall,
   APIClientConfig,
   DirectLoginAuthentication,
   get,

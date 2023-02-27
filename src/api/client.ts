@@ -22,14 +22,15 @@ export enum API {
   Payment,
   Transaction,
   User,
+  Customer,
 }
 
 /**
  * Alias for DirectLogin properties.
  *
- * @prop {string} username
- * @prop {string} passowrd
- * @prop {string} consumerKey
+ * @Property {string} username
+ * @Property {string} passowrd
+ * @Property {string} consumerKey
  *
  * @public
  */
@@ -43,13 +44,13 @@ export type DirectLoginAuthentication = {
  * Alias for APIClientConfig properties.
  * @type {Object}
  *
- * @prop {string} baseUri
- * @prop {Version} version
- * @prop {DirectLoginAuthentication} authentication
- * @prop {string} [token]
+ * @Property {string} baseUri
+ * @Property {Version} version
+ * @Property {DirectLoginAuthentication} authentication
+ * @Property {string} [token]
  *
- * @see Version
- * @see DirectLoginAuthentication
+ * @see {@link Version}
+ * @see {@link DirectLoginAuthentication}
  *
  * @public
  */
@@ -65,9 +66,9 @@ export type APIClientConfig = {
  * @type {Object}
  * @typeParam T - Type of object
  *
- * @prop {APIClientConfig} config
- * @prop {string} path
- * @prop {any} [body]
+ * @Property {APIClientConfig} config
+ * @Property {string} path
+ * @Property {any} [body]
  *
  * @see APIClientConfig
  *
@@ -84,11 +85,11 @@ export type MethodCall<T> = (
  * @type {Object}
  * @typeParam T - Type of object
  *
- * @prop {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [get]
- * @prop {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [create]
+ * @Property {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [get]
+ * @Property {(config: APIClientConfig, methodCall: MethodCall<T>) => any} [create]
  *
- * @see APIClientConfig
- * @see MethodCall
+ * @see {@link APIClientConfig}
+ * @see {@link MethodCall}
  *
  * @public
  */
@@ -102,8 +103,8 @@ export type APIRequest<T> = {
  * @type {Object}
  * @typeParam T - Type of object
  *
- * @prop {APIClientConfig} config
- * @prop {MethodCall<T>} methodCall
+ * @Property {APIClientConfig} config
+ * @Property {MethodCall<T>} methodCall
  *
  * @see APIClientConfig
  * @see MethodCall<T>
@@ -272,7 +273,7 @@ export const postRequest = async (
  *
  * @param config - The APIClientConfig object
  * @param request - The APIRequest object
- * @returns An {object} value
+ * @returns An @typeParam {Object} value
  *
  * @see APIClientConfig
  * @see APIRequest<T>
@@ -291,7 +292,7 @@ export const get = <T>(
  *
  * @param config - The APIClientConfig object
  * @param request - The APIRequest object
- * @returns An {object} value
+ * @returns An @typeParam {Object} value
  *
  * @see APIClientConfig
  * @see APIRequest<T>

@@ -6,12 +6,14 @@ import {
 } from "./client";
 
 /**
- * Get banks on this API instance.
- * Returns a list of banks.
+ * Get Accounts at Bank.
+ * Returns the list of accounts at BANK_ID that the user has access to.
  *
  * @param config - The APIClientConfig object
  * @param methodCall - A higher order function
  * @returns A curried function
+ *
+ * @see APIClientConfig
  *
  * @public
  */
@@ -26,15 +28,18 @@ export const GetAccountsByBankId =
   };
 
 /**
- * Returns an anonymous function for creating or getting Bank data.
+ * Returns an anonymous function for creating or getting an Account data.
  *
  * @param config - The APIClientConfig object
  * @param methodCall - A higher order function
  * @returns A higher order function
  *
+ * @see {@link APIClientConfig}
+ * @see {@link APIRequest}
+ *
  * @public
  */
-export const account: APIRequest<API.Account> = {
+export const Account: APIRequest<API.Account> = {
   get: (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<API.Account>

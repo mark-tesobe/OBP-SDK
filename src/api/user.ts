@@ -5,6 +5,18 @@ import {
   apiCallWithCustomURIPath,
 } from "./client";
 
+/**
+ * Get the logged in user
+ * Returns information about the logged in user.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A curried function
+ *
+ * @see APIClientConfig
+ *
+ * @public
+ */
 export const Current = async (
   config: APIClientConfig,
   methodCall: (config: APIClientConfig, path: string) => Promise<API.User>
@@ -12,7 +24,19 @@ export const Current = async (
   return await methodCall(config, "/users/current");
 };
 
-export const user: APIRequest<API.User> = {
+/**
+ * Returns an anonymous function for creating or getting a User data.
+ *
+ * @param config - The APIClientConfig object
+ * @param methodCall - A higher order function
+ * @returns A higher order function
+ *
+ * @see APIClientConfig
+ * @see {@link APIRequest}
+ *
+ * @public
+ */
+export const User: APIRequest<API.User> = {
   get: (
     config: APIClientConfig,
     methodCall: (config: APIClientConfig, path: string) => Promise<API.User>
