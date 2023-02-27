@@ -8,7 +8,6 @@ import superagent from "superagent";
 export enum Version {
   v500 = "v5.0.0",
   v510 = "v5.1.0",
-  v400 = "v4.0.0",
 }
 
 /**
