@@ -1,4 +1,4 @@
-obp-sdk-ts / [Modules](modules.md)
+obp-sdk-ts / [Modules](Modules.md)
 
 # obp-sdk-ts
 
