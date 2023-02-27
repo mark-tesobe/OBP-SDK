@@ -23,7 +23,7 @@ Types of OBP API.
 
 #### Defined in
 
-[api/client.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L21)
+[api/client.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L21)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L20)
+[api/client.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L20)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:25](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L25)
+[api/client.ts:25](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L25)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:22](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L22)
+[api/client.ts:22](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L22)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:23](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L23)
+[api/client.ts:23](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L23)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-[api/client.ts:24](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L24)
+[api/client.ts:24](https://github.com/mark-tesobe/OBP-SDK/blob/341a984/src/api/client.ts#L24)
