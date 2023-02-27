@@ -72,7 +72,7 @@ authentication
 
 #### Defined in
 
-[api/client.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L57)
+[api/client.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L57)
 
 ___
 
@@ -110,7 +110,7 @@ Alias for APIRequest properties.
 
 #### Defined in
 
-[api/client.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L96)
+[api/client.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L96)
 
 ___
 
@@ -142,7 +142,7 @@ consumerKey
 
 #### Defined in
 
-[api/client.ts:37](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L37)
+[api/client.ts:37](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L37)
 
 ___
 
@@ -192,7 +192,7 @@ APIClientConfig
 
 #### Defined in
 
-[api/client.ts:77](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L77)
+[api/client.ts:77](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L77)
 
 ___
 
@@ -226,7 +226,7 @@ to
 
 #### Defined in
 
-[api/transaction.ts:18](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/transaction.ts#L18)
+[api/transaction.ts:18](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/transaction.ts#L18)
 
 ## Variables
 
@@ -251,7 +251,7 @@ A higher order function
 
 #### Defined in
 
-[api/account.ts:42](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/account.ts#L42)
+[api/account.ts:42](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/account.ts#L42)
 
 ___
 
@@ -276,7 +276,7 @@ A higher order function
 
 #### Defined in
 
-[api/bank.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/bank.ts#L57)
+[api/bank.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/bank.ts#L57)
 
 ___
 
@@ -301,7 +301,7 @@ A higher order function
 
 #### Defined in
 
-[api/transaction.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/transaction.ts#L96)
+[api/transaction.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/transaction.ts#L96)
 
 ___
 
@@ -326,7 +326,7 @@ A higher order function
 
 #### Defined in
 
-[api/user.ts:39](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/user.ts#L39)
+[api/user.ts:39](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/user.ts#L39)
 
 ## Functions
 
@@ -382,7 +382,7 @@ A curried function
 
 #### Defined in
 
-[api/transaction.ts:68](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/transaction.ts#L68)
+[api/transaction.ts:68](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/transaction.ts#L68)
 
 ___
 
@@ -412,7 +412,7 @@ A curried function
 
 #### Defined in
 
-[api/user.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/user.ts#L20)
+[api/user.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/user.ts#L20)
 
 ___
 
@@ -438,7 +438,7 @@ A curried function
 
 #### Defined in
 
-[api/bank.ts:38](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/bank.ts#L38)
+[api/bank.ts:38](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/bank.ts#L38)
 
 ___
 
@@ -476,7 +476,7 @@ A curried function
 
 #### Defined in
 
-[api/bank.ts:19](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/bank.ts#L19)
+[api/bank.ts:19](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/bank.ts#L19)
 
 ___
 
@@ -520,7 +520,7 @@ A curried function
 
 #### Defined in
 
-[api/transaction.ts:43](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/transaction.ts#L43)
+[api/transaction.ts:43](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/transaction.ts#L43)
 
 ___
 
@@ -556,7 +556,7 @@ An
 
 #### Defined in
 
-[api/client.ts:302](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L302)
+[api/client.ts:302](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L302)
 
 ___
 
@@ -592,4 +592,4 @@ An
 
 #### Defined in
 
-[api/client.ts:283](https://github.com/mark-tesobe/OBP-SDK/blob/3579ba0/src/api/client.ts#L283)
+[api/client.ts:283](https://github.com/mark-tesobe/OBP-SDK/blob/2278c04/src/api/client.ts#L283)
