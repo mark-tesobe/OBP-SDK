@@ -22,6 +22,6 @@ describe("Bank", () => {
       authentication: directLogin,
     };
     const banks = await get<API.Bank>(clientConfig, Bank)(GetBanks);
-    expect(await banks(GetBanks)).toBeDefined();
+    expect(banks).toBeDefined();
   });
 });
