@@ -8,6 +8,15 @@ const jestConfig: JestConfigWithTsJest = {
   moduleNameMapper: {
     "^@dexsdk/(.*)$": "<rootDir>/src/$1",
   },
+  reporters: ["default", "jest-junit"],
+  globals: {
+    obpUsername: process.env.OBP_USERNAME,
+    obpPassword: process.env.OBP_PASSWORD,
+    obpConsumerKey: process.env.OBP_CONSUMER_KEY,
+    //obpBaseUri: "https://apisandbox.openbankproject.com",
+    obpBaseUri: "https://obp-apisandbox.joinfincubator.com",
+    obpVersion: "v5.1.0",
+  },
 };
 
 export default jestConfig;

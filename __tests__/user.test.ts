@@ -12,13 +12,13 @@ import {
 describe("User", () => {
   test("get<API.User> Current should be able to get the Current User.", async () => {
     const directLogin: DirectLoginAuthentication = {
-      username: process.env.OBP_USERNAME || "",
-      password: process.env.OBP_PASSWORD || "",
-      consumerKey: process.env.OBP_CONSUMER_KEY || "",
+      username: global.obpUsername,
+      password: global.obpPassword,
+      consumerKey: global.obpConsumerKey,
     };
     const clientConfig: APIClientConfig = {
-      baseUri: "https://apisandbox.openbankproject.com",
-      version: Version.v500,
+      baseUri: global.obpBaseUri,
+      version: global.obpVersion as Version,
       authentication: directLogin,
     };
     const users = await get<API.User>(clientConfig, User)(Current);
