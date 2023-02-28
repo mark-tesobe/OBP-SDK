@@ -11,7 +11,7 @@ Inside the obp-sdk repository folder, execute the **yarn link** command.
   yarn link
 ```
 
-To link the **obp-sdk-ts** library inoto your app.
+To link the **obp-sdk-ts** library into your app, run the command inside your app.
 
 ```
   yarn link obp-sdk-ts
