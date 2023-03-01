@@ -11,7 +11,7 @@ import {
  *
  * @Property {string} description
  * @Property {{bank_id: string, account_id: string}} to
- * @Property {{curreny: string} value
+ * @Property {{curreny: string, amount: number}} value
  *
  * @public
  */
