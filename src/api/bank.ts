@@ -6,8 +6,8 @@ import {
 } from "./client";
 
 /**
- * Get banks on this API instance.
- * Returns a list of banks.
+ * Get the bank specified by BANK_ID.
+ * Returns information about a single bank specified by BANK_ID.
  *
  * @param config - The APIClientConfig object
  * @param methodCall - A higher order function
@@ -26,8 +26,8 @@ export const GetBanksById =
   };
 
 /**
- * Get the bank specified by BANK_ID.
- * Returns information about a single bank specified by BANK_ID.
+ * Get banks on this API instance.
+ * Returns a list of banks.
  *
  * @param config - The APIClientConfig object
  * @param methodCall - A higher order function
