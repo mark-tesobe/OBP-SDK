@@ -16,6 +16,8 @@ const jestConfig: JestConfigWithTsJest = {
     //obpBaseUri: "https://apisandbox.openbankproject.com",
     obpBaseUri: "https://obp-apisandbox.joinfincubator.com",
     obpVersion: "v5.1.0",
+    //obpTestBank: "rbs",
+    obpTestBankId: "joinfincubator.01.uk.bk0",
   },
 };
 
