@@ -2,6 +2,11 @@ import "dotenv/config";
 export { Bank, GetBanks, GetBanksById } from "./bank";
 export { Account } from "./account";
 export {
+  Customer,
+  GetCustomersAtBank,
+  GetCustomersAtAnyBank,
+} from "./customer";
+export {
   Transaction,
   TransactionRequestAccountBody,
   GetTransactionsForAccountFull,

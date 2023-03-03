@@ -27,7 +27,7 @@ describe("Account", () => {
     const accounts = await get<API.Account>(
       clientConfig,
       Account
-    )(GetAccountsByBankId)("rbs");
+    )(GetAccountsByBankId)(global.obpTestBankId);
 
     expect(accounts).toBeDefined();
   });
@@ -36,7 +36,7 @@ describe("Account", () => {
     const accounts = await get<API.Account>(
       clientConfig,
       Account
-    )("/banks/rbs/accounts");
+    )(`/banks/${global.obpTestBankId}/accounts`);
 
     expect(accounts).toBeDefined();
   });
@@ -46,7 +46,9 @@ describe("Account", () => {
       clientConfig,
       getRequest
     );
-    const accounts = await customPathCall("/banks/rbs/accounts");
+    const accounts = await customPathCall(
+      `/banks/${global.obpTestBankId}/accounts`
+    );
 
     expect(accounts).toBeDefined();
   });

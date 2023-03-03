@@ -24,7 +24,7 @@ const clientConfig: APIClientConfig = {
   version: global.obpVersion as Version,
   authentication: directLogin,
 };
-const bankId = "rbs";
+const bankId = global.obpTestBankId;
 const accountId = "9e6b2f45-a449-4e87-b772-e74cc9d42448";
 const viewId = "owner";
 

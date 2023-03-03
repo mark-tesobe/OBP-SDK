@@ -22,6 +22,8 @@ export enum API {
   Transaction,
   User,
   Customer,
+  KYC,
+  Metadata,
 }
 
 /**
