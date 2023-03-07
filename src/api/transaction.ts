@@ -35,7 +35,7 @@ export type TransactionRequestAccountBody = {
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  *
  * @public
  */
@@ -60,7 +60,8 @@ export const GetTransactionsForAccountFull =
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
+ * @see {@link TransactionRequestAccountBody}
  *
  * @public
  */
@@ -88,7 +89,7 @@ export const CreateTransactionRequestAccount =
  * @param methodCall - A higher order function
  * @returns A higher order function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  * @see {@link APIRequest}
  *
  * @public

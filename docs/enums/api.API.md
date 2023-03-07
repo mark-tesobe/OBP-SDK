@@ -13,6 +13,8 @@ Types of OBP API.
 - [Account](api.API.md#account)
 - [Bank](api.API.md#bank)
 - [Customer](api.API.md#customer)
+- [KYC](api.API.md#kyc)
+- [Metadata](api.API.md#metadata)
 - [Payment](api.API.md#payment)
 - [Transaction](api.API.md#transaction)
 - [User](api.API.md#user)
@@ -25,7 +27,7 @@ Types of OBP API.
 
 #### Defined in
 
-[api/client.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L21)
+[api/client.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L20)
 
 ___
 
@@ -35,7 +37,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L20)
+[api/client.ts:19](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L19)
 
 ___
 
@@ -45,7 +47,27 @@ ___
 
 #### Defined in
 
-[api/client.ts:25](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L25)
+[api/client.ts:24](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L24)
+
+___
+
+### KYC
+
+• **KYC** = ``6``
+
+#### Defined in
+
+[api/client.ts:25](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L25)
+
+___
+
+### Metadata
+
+• **Metadata** = ``7``
+
+#### Defined in
+
+[api/client.ts:26](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L26)
 
 ___
 
@@ -55,7 +77,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:22](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L22)
+[api/client.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L21)
 
 ___
 
@@ -65,7 +87,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:23](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L23)
+[api/client.ts:22](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L22)
 
 ___
 
@@ -75,4 +97,4 @@ ___
 
 #### Defined in
 
-[api/client.ts:24](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L24)
+[api/client.ts:23](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L23)

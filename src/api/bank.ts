@@ -13,6 +13,8 @@ import {
  * @param methodCall - A higher order function
  * @returns A curried function
  *
+ * @see {@link APIClientConfig}
+ *
  * @public
  */
 export const GetBanksById =
@@ -33,6 +35,8 @@ export const GetBanksById =
  * @param methodCall - A higher order function
  * @returns A curried function
  *
+ * @see {@link APIClientConfig}
+ *
  * @public
  */
 export const GetBanks = async (
@@ -49,7 +53,7 @@ export const GetBanks = async (
  * @param methodCall - A higher order function
  * @returns A higher order function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  * @see {@link APIRequest}
  *
  * @public

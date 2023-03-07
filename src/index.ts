@@ -1,6 +1,8 @@
 import "dotenv/config";
 export { Bank, GetBanks, GetBanksById } from "./api/bank";
-export { Account } from "./api/account";
+export { Account, GetAccountsByBankId } from "./api/account";
+export { KYC, GetKYCStatus } from "./api/kyc";
+export { Metadata, GetTagsOnAccount } from "./api/metadata";
 export {
   Customer,
   GetCustomersAtBank,

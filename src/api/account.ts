@@ -13,7 +13,7 @@ import {
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  *
  * @public
  */

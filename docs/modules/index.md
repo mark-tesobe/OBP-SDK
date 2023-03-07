@@ -13,10 +13,18 @@
 - [Bank](index.md#bank)
 - [CreateTransactionRequestAccount](index.md#createtransactionrequestaccount)
 - [Current](index.md#current)
+- [Customer](index.md#customer)
 - [DirectLoginAuthentication](index.md#directloginauthentication)
+- [GetAccountsByBankId](index.md#getaccountsbybankid)
 - [GetBanks](index.md#getbanks)
 - [GetBanksById](index.md#getbanksbyid)
+- [GetCustomersAtAnyBank](index.md#getcustomersatanybank)
+- [GetCustomersAtBank](index.md#getcustomersatbank)
+- [GetKYCStatus](index.md#getkycstatus)
+- [GetTagsOnAccount](index.md#gettagsonaccount)
 - [GetTransactionsForAccountFull](index.md#gettransactionsforaccountfull)
+- [KYC](index.md#kyc)
+- [Metadata](index.md#metadata)
 - [MethodCall](index.md#methodcall)
 - [Transaction](index.md#transaction)
 - [TransactionRequestAccountBody](index.md#transactionrequestaccountbody)
@@ -69,9 +77,21 @@ Re-exports [Current](api.md#current)
 
 ___
 
+### Customer
+
+Re-exports [Customer](api.md#customer)
+
+___
+
 ### DirectLoginAuthentication
 
 Re-exports [DirectLoginAuthentication](api.md#directloginauthentication)
+
+___
+
+### GetAccountsByBankId
+
+Re-exports [GetAccountsByBankId](api.md#getaccountsbybankid)
 
 ___
 
@@ -87,9 +107,45 @@ Re-exports [GetBanksById](api.md#getbanksbyid)
 
 ___
 
+### GetCustomersAtAnyBank
+
+Re-exports [GetCustomersAtAnyBank](api.md#getcustomersatanybank)
+
+___
+
+### GetCustomersAtBank
+
+Re-exports [GetCustomersAtBank](api.md#getcustomersatbank)
+
+___
+
+### GetKYCStatus
+
+Re-exports [GetKYCStatus](api.md#getkycstatus)
+
+___
+
+### GetTagsOnAccount
+
+Re-exports [GetTagsOnAccount](api.md#gettagsonaccount)
+
+___
+
 ### GetTransactionsForAccountFull
 
 Re-exports [GetTransactionsForAccountFull](api.md#gettransactionsforaccountfull)
+
+___
+
+### KYC
+
+Re-exports [KYC](api.md#kyc)
+
+___
+
+### Metadata
+
+Re-exports [Metadata](api.md#metadata)
 
 ___
 

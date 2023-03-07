@@ -13,7 +13,7 @@ import {
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  *
  * @public
  */
@@ -31,7 +31,7 @@ export const Current = async (
  * @param methodCall - A higher order function
  * @returns A higher order function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  * @see {@link APIRequest}
  *
  * @public

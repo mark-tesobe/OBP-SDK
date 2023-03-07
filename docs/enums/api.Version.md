@@ -10,21 +10,10 @@ OBP API Versions.
 
 ### Enumeration Members
 
-- [v400](api.Version.md#v400)
 - [v500](api.Version.md#v500)
 - [v510](api.Version.md#v510)
 
 ## Enumeration Members
-
-### v400
-
-• **v400** = ``"v4.0.0"``
-
-#### Defined in
-
-[api/client.ts:11](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L11)
-
-___
 
 ### v500
 
@@ -32,7 +21,7 @@ ___
 
 #### Defined in
 
-[api/client.ts:9](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L9)
+[api/client.ts:9](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L9)
 
 ___
 
@@ -42,4 +31,4 @@ ___
 
 #### Defined in
 
-[api/client.ts:10](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L10)
+[api/client.ts:10](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L10)

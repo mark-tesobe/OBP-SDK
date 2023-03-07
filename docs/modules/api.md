@@ -21,6 +21,9 @@
 
 - [Account](api.md#account)
 - [Bank](api.md#bank)
+- [Customer](api.md#customer)
+- [KYC](api.md#kyc)
+- [Metadata](api.md#metadata)
 - [Transaction](api.md#transaction)
 - [User](api.md#user)
 
@@ -28,8 +31,13 @@
 
 - [CreateTransactionRequestAccount](api.md#createtransactionrequestaccount)
 - [Current](api.md#current)
+- [GetAccountsByBankId](api.md#getaccountsbybankid)
 - [GetBanks](api.md#getbanks)
 - [GetBanksById](api.md#getbanksbyid)
+- [GetCustomersAtAnyBank](api.md#getcustomersatanybank)
+- [GetCustomersAtBank](api.md#getcustomersatbank)
+- [GetKYCStatus](api.md#getkycstatus)
+- [GetTagsOnAccount](api.md#gettagsonaccount)
 - [GetTransactionsForAccountFull](api.md#gettransactionsforaccountfull)
 - [create](api.md#create)
 - [get](api.md#get)
@@ -74,7 +82,7 @@ authentication
 
 #### Defined in
 
-[api/client.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L57)
+[api/client.ts:58](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L58)
 
 ___
 
@@ -112,7 +120,7 @@ Alias for APIRequest properties.
 
 #### Defined in
 
-[api/client.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L96)
+[api/client.ts:97](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L97)
 
 ___
 
@@ -144,7 +152,7 @@ consumerKey
 
 #### Defined in
 
-[api/client.ts:37](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L37)
+[api/client.ts:38](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L38)
 
 ___
 
@@ -194,7 +202,7 @@ APIClientConfig
 
 #### Defined in
 
-[api/client.ts:77](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L77)
+[api/client.ts:78](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L78)
 
 ___
 
@@ -214,6 +222,8 @@ to
 
 **`Property`**
 
+value
+
 #### Type declaration
 
 | Name | Type |
@@ -228,7 +238,7 @@ to
 
 #### Defined in
 
-[api/transaction.ts:18](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/transaction.ts#L18)
+[api/transaction.ts:18](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/transaction.ts#L18)
 
 ## Variables
 
@@ -253,7 +263,7 @@ A higher order function
 
 #### Defined in
 
-[api/account.ts:42](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/account.ts#L42)
+[api/account.ts:42](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/account.ts#L42)
 
 ___
 
@@ -273,12 +283,87 @@ A higher order function
 
 **`See`**
 
- - APIClientConfig
+ - [APIClientConfig](api.md#apiclientconfig)
  - [APIRequest](api.md#apirequest)
 
 #### Defined in
 
-[api/bank.ts:57](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/bank.ts#L57)
+[api/bank.ts:61](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/bank.ts#L61)
+
+___
+
+### Customer
+
+• `Const` **Customer**: [`APIRequest`](api.md#apirequest)<[`Customer`](../enums/api.API.md#customer)\>
+
+Returns an anonymous function for creating or getting Customer data.
+
+**`Param`**
+
+The APIClientConfig object
+
+**`Param`**
+
+A higher order function
+
+**`See`**
+
+ - [APIClientConfig](api.md#apiclientconfig)
+ - [APIRequest](api.md#apirequest)
+
+#### Defined in
+
+[api/customer.ts:147](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/customer.ts#L147)
+
+___
+
+### KYC
+
+• `Const` **KYC**: [`APIRequest`](api.md#apirequest)<[`KYC`](../enums/api.API.md#kyc)\>
+
+Returns an anonymous function for creating or getting KYC data.
+
+**`Param`**
+
+The APIClientConfig object
+
+**`Param`**
+
+A higher order function
+
+**`See`**
+
+ - [APIClientConfig](api.md#apiclientconfig)
+ - [APIRequest](api.md#apirequest)
+
+#### Defined in
+
+api/kyc.ts:40
+
+___
+
+### Metadata
+
+• `Const` **Metadata**: [`APIRequest`](api.md#apirequest)<[`Metadata`](../enums/api.API.md#metadata)\>
+
+Returns an anonymous function for creating or getting Metadata data.
+
+**`Param`**
+
+The APIClientConfig object
+
+**`Param`**
+
+A higher order function
+
+**`See`**
+
+ - [APIClientConfig](api.md#apiclientconfig)
+ - [APIRequest](api.md#apirequest)
+
+#### Defined in
+
+api/metadata.ts:43
 
 ___
 
@@ -298,12 +383,12 @@ A higher order function
 
 **`See`**
 
- - APIClientConfig
+ - [APIClientConfig](api.md#apiclientconfig)
  - [APIRequest](api.md#apirequest)
 
 #### Defined in
 
-[api/transaction.ts:96](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/transaction.ts#L96)
+[api/transaction.ts:97](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/transaction.ts#L97)
 
 ___
 
@@ -323,12 +408,12 @@ A higher order function
 
 **`See`**
 
- - APIClientConfig
+ - [APIClientConfig](api.md#apiclientconfig)
  - [APIRequest](api.md#apirequest)
 
 #### Defined in
 
-[api/user.ts:39](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/user.ts#L39)
+[api/user.ts:39](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/user.ts#L39)
 
 ## Functions
 
@@ -340,7 +425,8 @@ Create Transaction Request (ACCOUNT).
 
 **`See`**
 
-APIClientConfig
+ - [APIClientConfig](api.md#apiclientconfig)
+ - [TransactionRequestAccountBody](api.md#transactionrequestaccountbody)
 
 #### Parameters
 
@@ -384,7 +470,7 @@ A curried function
 
 #### Defined in
 
-[api/transaction.ts:68](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/transaction.ts#L68)
+[api/transaction.ts:69](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/transaction.ts#L69)
 
 ___
 
@@ -397,7 +483,7 @@ Returns information about the logged in user.
 
 **`See`**
 
-APIClientConfig
+[APIClientConfig](api.md#apiclientconfig)
 
 #### Parameters
 
@@ -414,7 +500,49 @@ A curried function
 
 #### Defined in
 
-[api/user.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/user.ts#L20)
+[api/user.ts:20](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/user.ts#L20)
+
+___
+
+### GetAccountsByBankId
+
+▸ **GetAccountsByBankId**(`config`, `methodCall`): (`id`: `string`) => `Promise`<[`Account`](../enums/api.API.md#account)\>
+
+Get Accounts at Bank.
+Returns the list of accounts at BANK_ID that the user has access to.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`APIClientConfig`](api.md#apiclientconfig) | The APIClientConfig object |
+| `methodCall` | (`config`: [`APIClientConfig`](api.md#apiclientconfig), `path`: `string`) => `Promise`<[`Account`](../enums/api.API.md#account)\> | A higher order function |
+
+#### Returns
+
+`fn`
+
+A curried function
+
+▸ (`id`): `Promise`<[`Account`](../enums/api.API.md#account)\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
+
+##### Returns
+
+`Promise`<[`Account`](../enums/api.API.md#account)\>
+
+#### Defined in
+
+[api/account.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/account.ts#L21)
 
 ___
 
@@ -422,8 +550,12 @@ ___
 
 ▸ **GetBanks**(`config`, `methodCall`): `Promise`<`any`\>
 
-Get the bank specified by BANK_ID.
-Returns information about a single bank specified by BANK_ID.
+Get banks on this API instance.
+Returns a list of banks.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
 
 #### Parameters
 
@@ -440,7 +572,7 @@ A curried function
 
 #### Defined in
 
-[api/bank.ts:38](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/bank.ts#L38)
+[api/bank.ts:42](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/bank.ts#L42)
 
 ___
 
@@ -448,8 +580,12 @@ ___
 
 ▸ **GetBanksById**(`config`, `methodCall`): (`id`: `string`) => `Promise`<[`Account`](../enums/api.API.md#account)\>
 
-Get banks on this API instance.
-Returns a list of banks.
+Get the bank specified by BANK_ID.
+Returns information about a single bank specified by BANK_ID.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
 
 #### Parameters
 
@@ -478,7 +614,161 @@ A curried function
 
 #### Defined in
 
-[api/bank.ts:19](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/bank.ts#L19)
+[api/bank.ts:21](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/bank.ts#L21)
+
+___
+
+### GetCustomersAtAnyBank
+
+▸ **GetCustomersAtAnyBank**(`config`, `methodCall`): `Promise`<`any`\>
+
+Get Customers at Any Bank.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`APIClientConfig`](api.md#apiclientconfig) | The APIClientConfig object |
+| `methodCall` | (`config`: [`APIClientConfig`](api.md#apiclientconfig), `path`: `string`) => `Promise`<`any`\> | A higher order function |
+
+#### Returns
+
+`Promise`<`any`\>
+
+A curried function
+
+#### Defined in
+
+[api/customer.ts:74](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/customer.ts#L74)
+
+___
+
+### GetCustomersAtBank
+
+▸ **GetCustomersAtBank**(`config`, `methodCall`): (`bankId`: `string`) => `Promise`<[`Customer`](../enums/api.API.md#customer)\>
+
+Get Customers at Bank.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`APIClientConfig`](api.md#apiclientconfig) | The APIClientConfig object |
+| `methodCall` | (`config`: [`APIClientConfig`](api.md#apiclientconfig), `path`: `string`) => `Promise`<`any`\> | A higher order function |
+
+#### Returns
+
+`fn`
+
+A curried function
+
+▸ (`bankId`): `Promise`<[`Customer`](../enums/api.API.md#customer)\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `bankId` | `string` |
+
+##### Returns
+
+`Promise`<[`Customer`](../enums/api.API.md#customer)\>
+
+#### Defined in
+
+[api/customer.ts:93](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/customer.ts#L93)
+
+___
+
+### GetKYCStatus
+
+▸ **GetKYCStatus**(`config`, `methodCall`): (`customerId`: `string`) => `Promise`<`any`\>
+
+Get the KYC statuses for a customer specified by CUSTOMER_ID over time.
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`APIClientConfig`](api.md#apiclientconfig) | The APIClientConfig object |
+| `methodCall` | (`config`: [`APIClientConfig`](api.md#apiclientconfig), `path`: `string`) => `Promise`<`any`\> | A higher order function |
+
+#### Returns
+
+`fn`
+
+A curried function
+
+▸ (`customerId`): `Promise`<`any`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `customerId` | `string` |
+
+##### Returns
+
+`Promise`<`any`\>
+
+#### Defined in
+
+api/kyc.ts:20
+
+___
+
+### GetTagsOnAccount
+
+▸ **GetTagsOnAccount**(`config`, `methodCall`): (`bankId`: `string`, `accountId`: `string`, `viewId`: `string`) => `Promise`<`any`\>
+
+Returns the account ACCOUNT_ID tags made on a view (VIEW_ID).
+
+**`See`**
+
+[APIClientConfig](api.md#apiclientconfig)
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`APIClientConfig`](api.md#apiclientconfig) | The APIClientConfig object |
+| `methodCall` | (`config`: [`APIClientConfig`](api.md#apiclientconfig), `path`: `string`) => `Promise`<`any`\> | A higher order function |
+
+#### Returns
+
+`fn`
+
+A curried function
+
+▸ (`bankId`, `accountId`, `viewId`): `Promise`<`any`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `bankId` | `string` |
+| `accountId` | `string` |
+| `viewId` | `string` |
+
+##### Returns
+
+`Promise`<`any`\>
+
+#### Defined in
+
+api/metadata.ts:20
 
 ___
 
@@ -491,7 +781,7 @@ Returns transactions list of the account specified by ACCOUNT_ID and moderated b
 
 **`See`**
 
-APIClientConfig
+[APIClientConfig](api.md#apiclientconfig)
 
 #### Parameters
 
@@ -522,7 +812,7 @@ A curried function
 
 #### Defined in
 
-[api/transaction.ts:43](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/transaction.ts#L43)
+[api/transaction.ts:43](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/transaction.ts#L43)
 
 ___
 
@@ -558,7 +848,7 @@ An
 
 #### Defined in
 
-[api/client.ts:302](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L302)
+[api/client.ts:303](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L303)
 
 ___
 
@@ -594,4 +884,4 @@ An
 
 #### Defined in
 
-[api/client.ts:283](https://github.com/mark-tesobe/OBP-SDK/blob/d1dab0d/src/api/client.ts#L283)
+[api/client.ts:284](https://github.com/mark-tesobe/OBP-SDK/blob/92f681c/src/api/client.ts#L284)

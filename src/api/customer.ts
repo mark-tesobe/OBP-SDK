@@ -67,7 +67,7 @@ export type CustomerBody = {
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  *
  * @public
  */
@@ -85,7 +85,7 @@ export const GetCustomersAtAnyBank = async (
  * @param methodCall - A higher order function
  * @returns A curried function
  *
- * @see APIClientConfig
+ * @see {@link APIClientConfig}
  *
  * @public
  */
@@ -110,6 +110,7 @@ export const GetCustomersAtBank =
  * @returns A curried function
  *
  * @see {@link APIClientConfig}
+ * @see {@link CustomerBody}
  *
  * @public
  */
